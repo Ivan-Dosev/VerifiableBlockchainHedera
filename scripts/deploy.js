@@ -3,12 +3,12 @@ const hre = require("hardhat");
 async function main() {
 
   // Deploy the contract
-  const HelloHedera = await hre.ethers.getContractFactory("HelloHedera");
-  const helloHedera = await HelloHedera.deploy();
+  const HashCertificate = await hre.ethers.getContractFactory("HashCertificate");
+  const hashCertificate = await HashCertificate.deploy();
 
-  const contractAddress = (await helloHedera.deployTransaction.wait()).contractAddress;
+  const contractAddress = (await hashCertificate.deployTransaction.wait()).contractAddress;
 
-  console.log("HelloWorld contract deployed to:", contractAddress);
+  console.log("Contract deployed to:", contractAddress);
 
 }
 
